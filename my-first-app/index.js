@@ -10,4 +10,9 @@ module.exports = (robot) => {
   robot.on('push', async context => {
     robot.log(context)
   })
+
+  robot.on('issues.opened',async context => {
+    const params = context.issue({body: 'Hello world'})
+    return context.github.issues.createComment(params)
+  })
 }
