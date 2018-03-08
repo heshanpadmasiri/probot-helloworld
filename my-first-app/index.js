@@ -7,4 +7,7 @@ module.exports = (robot) => {
 
   // To get your app running against GitHub, see:
   // https://probot.github.io/docs/development/
+  robot.on('push', async context => {
+    robot.log(context)
+  })
 }
